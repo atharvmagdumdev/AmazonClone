@@ -1,0 +1,84 @@
+/* Base tweaks that complement Tailwind */
+* { box-sizing: border-box; }
+
+/* * === Amazon Theme ===
+ * These classes are used to apply the Amazon theme.
+ * They are used in index.html and app.js.
+*/
+
+body {
+    /* Use a light gray background like Amazon */
+    background-color: #E3E6E6;
+}
+
+.header-nav {
+    /* Amazon's dark header */
+    background-color: #131921;
+}
+
+.header-search-btn {
+    background-color: #FEBD69; /* Amazon search yellow */
+    color: #111;
+}
+.header-search-btn:hover {
+    background-color: #F3A847;
+}
+
+.header-cart-count {
+    background-color: #F3A847; /* Darker yellow for cart count */
+    color: #111;
+    font-weight: 700;
+}
+
+/* Primary action button (Add to Cart, Apply, Checkout) */
+.btn-primary {
+    background-color: #FFD814; /* Amazon Yellow */
+    border: 1px solid #FCD200;
+    color: #0F1111;
+    border-radius: 8px;
+    font-weight: 500;
+    /* We'll use Tailwind for layout (w-full, h-10 etc) */
+}
+.btn-primary:hover {
+    background-color: #F7CA00;
+    border-color: #F2C200;
+}
+
+/* Product title link style */
+.product-title-link {
+    color: #007185; /* Amazon blue */
+}
+.product-title-link:hover {
+    color: #C7511F; /* Amazon orange */
+}
+
+/* --- Original Styles --- */
+
+/* Drawers / Modals transitions */
+#cartDrawer {
+    transition: transform 0.25s ease;
+}
+
+.drawer-open {
+    transform: translateX(0) !important;
+}
+
+#productModal.hidden,
+#authModal.hidden {
+    display: none;
+}
+
+.modal-show {
+    display: block !important;
+}
+
+/* Hide number input arrows (Chrome) */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

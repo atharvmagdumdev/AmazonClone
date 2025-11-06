@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Amazon Clone - Home</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="text-gray-900" style="font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';">
+	
+	<header class="sticky top-0 z-40 header-nav text-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex items-center justify-between h-16">
+				<div class="flex items-center gap-3">
+					<button id="mobileMenuBtn" class="md:hidden p-2 rounded hover:bg-gray-700" aria-label="Open Menu">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+					</button>
+					<a href="#" class="flex items-center gap-2 font-semibold text-lg p-1 border border-transparent hover:border-white rounded">
+						<img src="./img/logo.png" alt="Logo" class="h-7"/>
+					</a>
+				</div>
+
+				<div class="flex-1 max-w-2xl mx-4 hidden md:flex">
+					<label for="searchInput" class="sr-only">Search products</label>
+					<input id="searchInput" type="text" placeholder="Search for products" class="w-full h-10 px-3 rounded-l-md border-0 text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-400" />
+					<button class="w-12 h-10 flex items-center justify-center header-search-btn rounded-r-md">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.9 14.32a8 8 0 111.414-1.414l4.387 4.387-1.414 1.414-4.387-4.387zM8 14a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd"/></svg>
+					</button>
+				</div>
+
+				<div class="flex items-center gap-3">
+					<button id="authBtn" class="px-2 py-0 rounded border border-transparent hover:border-white text-left hidden sm:block">
+						<span id="authHello" class="text-xs block font-normal">Hello, Sign in</span>
+						<span class="font-semibold block -mt-0.5 text-sm">Account & Lists</span>
+					</button>
+					<a href="#" class="px-2 py-0 rounded border border-transparent hover:border-white text-left hidden lg:block">
+						<span class="text-xs block font-normal">Returns</span>
+						<span class="font-semibold block -mt-0.5 text-sm">& Orders</span>
+					</a>
+					<button id="cartBtn" class="relative px-2 py-2 rounded flex items-end gap-1 border border-transparent hover:border-white" aria-label="Open Cart">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25h10.836c.51 0 .955-.343 1.087-.835l2.09-7.838a1.125 1.125 0 00-1.087-1.415H5.127M7.5 14.25L5.127 3M7.5 14.25l-2.25 3.75m0 0h12.75M5.25 18a1.5 1.5 0 11-3 0m15.75 0a1.5 1.5 0 11-3 0"/></svg>
+						<span class="font-semibold text-sm hidden sm:block">Cart</span>
+						<span id="cartCount" class="absolute top-1 left-4 header-cart-count text-xs rounded-full px-1.5">0</span>
+					</button>
+				</div>
+			</div>
+			<div class="md:hidden pb-3 px-4">
+				<div class="flex">
+					<label for="searchInputMobile" class="sr-only">Search products</label>
+					<input id="searchInputMobile" type="text" placeholder="Search for products" class="w-full h-10 px-3 rounded-l-md border-0 text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-400" />
+					<button class="w-12 h-10 flex items-center justify-center header-search-btn rounded-r-md">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.9 14.32a8 8 0 111.414-1.414l4.387 4.387-1.414 1.414-4.387-4.387zM8 14a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd"/></svg>
+					</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+		<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+			<aside class="md:col-span-3 lg:col-span-2">
+				<div class="bg-white border border-gray-200 rounded-lg p-4 sticky top-24">
+					<h2 class="text-base font-semibold mb-3">Filters</h2>
+					<div class="space-y-4">
+						<div>
+							<label class="text-sm font-medium">Category</label>
+							<select id="filterCategory" class="mt-1 w-full border border-gray-300 rounded-md h-9 px-2">
+								<option value="all">All</option>
+							</select>
+						</div>
+						<div>
+							<label class="text-sm font-medium">Price</label>
+							<div class="mt-2 flex items-center gap-2">
+								<input id="minPrice" type="number" class="w-1/2 border border-gray-300 rounded-md h-9 px-2" placeholder="Min" />
+								<input id="maxPrice" type="number" class="w-1/2 border border-gray-300 rounded-md h-9 px-2" placeholder="Max" />
+							</div>
+						</div>
+						<div>
+							<label class="text-sm font-medium">Sort by</label>
+							<select id="sortBy" class="mt-1 w-full border border-gray-300 rounded-md h-9 px-2">
+								<option value="relevance">Relevance</option>
+								<option value="price-asc">Price: Low to High</option>
+								<option value="price-desc">Price: High to Low</option>
+								<option value="rating-desc">Rating: High to Low</option>
+							</select>
+						</div>
+						<button id="applyFiltersBtn" class="w-full h-10 btn-primary">Apply</button>
+						<button id="clearFiltersBtn" class="w-full h-10 rounded-md border border-gray-300 text-gray-700">Clear</button>
+					</div>
+				</div>
+			</aside>
+
+			<section class="md:col-span-9 lg:col-span-10">
+				<div class="mb-6">
+					<div class="relative rounded-xl overflow-hidden border border-gray-200">
+						<img src="./amazon banner.png" alt="Banner" class="h-60 w-full object-cover" />
+						<div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+						<div class="absolute left-6 top-6 text-white">
+							<h2 class="text-xl font-semibold">Featured Deals</h2>
+							<p class="text-sm text-white/90">Shop top picks and best sellers</p>
+						</div>
+					</div>
+				</div>
+
+				<div id="productsGrid" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+			</section>
+		</div>
+	</main>
+
+	<div id="productModal" class="fixed inset-0 z-50 hidden">
+		<div class="absolute inset-0 bg-black/40"></div>
+		<div class="absolute inset-0 flex items-center justify-center p-4">
+			<div class="bg-white w-full max-w-2xl rounded-lg shadow-lg overflow-hidden">
+				<div class="flex items-center justify-between p-4 border-b">
+					<h3 id="modalTitle" class="text-lg font-semibold">Product</h3>
+					<button id="closeProductModal" class="p-2 rounded hover:bg-gray-100" aria-label="Close">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 8.586l4.95-4.95 1.414 1.414L11.414 10l4.95 4.95-1.414 1.414L10 11.414l-4.95 4.95-1.414-1.414L8.586 10 3.636 5.05 5.05 3.636 10 8.586z" clip-rule="evenodd"/></svg>
+					</button>
+				</div>
+				<div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+					<img id="modalImage" src="" alt="Product image" class="rounded-lg border" />
+					<div>
+						<p id="modalCategory" class="text-xs uppercase tracking-wide text-gray-500"></p>
+						<h4 id="modalName" class="text-lg font-semibold mt-1"></h4>
+						<div class="flex items-center gap-2 mt-1">
+							<span id="modalRating" class="text-sm text-amber-600 font-medium"></span>
+							<span class="text-sm text-gray-500" id="modalReviews"></span>
+						</div>
+						<p id="modalPrice" class="text-xl font-semibold mt-2"></p>
+						<p id="modalDesc" class="text-sm text-gray-600 mt-2"></p>
+						<div class="mt-4 flex gap-2">
+							<button id="modalAddToCart" class="flex-1 h-10 btn-primary">Add to Cart</button>
+							<button id="modalBuyNow" class="flex-1 h-10 border border-gray-300 rounded-md">Buy Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<aside id="cartDrawer" class="fixed inset-y-0 right-0 w-full sm:w-[28rem] bg-white border-l border-gray-200 z-50 translate-x-full transition-transform">
+		<div class="h-full flex flex-col">
+			<div class="p-4 border-b flex items-center justify-between">
+				<h3 class="text-lg font-semibold">Your Cart</h3>
+				<button id="closeCart" class="p-2 rounded hover:bg-gray-100" aria-label="Close Cart">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 8.586l4.95-4.95 1.414 1.414L11.414 10l4.95 4.95-1.414 1.414L10 11.414l-4.95 4.95-1.414-1.414L8.586 10 3.636 5.05 5.05 3.636 10 8.586z" clip-rule="evenodd"/></svg>
+				</button>
+			</div>
+			<div id="cartItems" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
+			<div class="border-t p-4 space-y-3">
+				<div class="flex items-center justify-between text-sm">
+					<span>Subtotal</span>
+					<span id="cartSubtotal" class="font-medium">$0.00</span>
+				</div>
+				<div class="flex items-center justify-between text-sm">
+					<span>Estimated Tax</span>
+					<span id="cartTax">$0.00</span>
+				</div>
+				<div class="flex items-center justify-between text-base font-semibold">
+					<span>Total</span>
+					<span id="cartTotal">$0.00</span>
+				</div>
+				<button id="checkoutBtn" class="w-full h-11 btn-primary font-semibold">Proceed to Checkout</button>
+			</div>
+		</div>
+	</aside>
+
+	<div id="authModal" class="fixed inset-0 z-50 hidden">
+		<div class="absolute inset-0 bg-black/40"></div>
+		<div class="absolute inset-0 flex items-center justify-center p-4">
+			<div class="bg-white w-full max-w-md rounded-lg shadow-lg overflow-hidden">
+				<div class="flex items-center justify-between p-4 border-b">
+					<h3 class="text-lg font-semibold" id="authModalTitle">Sign In</h3>
+					<button id="closeAuthModal" class="p-2 rounded hover:bg-gray-100" aria-label="Close">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 8.586l4.95-4.95 1.414 1.414L11.414 10l4.95 4.95-1.414 1.414L10 11.414l-4.95 4.95-1.414-1.414L8.586 10 3.636 5.05 5.05 3.636 10 8.586z" clip-rule="evenodd"/></svg>
+					</button>
+				</div>
+				<div class="p-4">
+					<form id="authForm" class="space-y-3">
+						<div>
+							<label class="text-sm font-medium" for="email">Email</label>
+							<input id="email" type="email" class="mt-1 w-full border border-gray-300 rounded-md h-10 px-3" required />
+						</div>
+						<div>
+							<label class="text-sm font-medium" for="password">Password</label>
+							<input id="password" type="password" minlength="6" class="mt-1 w-full border border-gray-300 rounded-md h-10 px-3" required />
+						</div>
+						<p id="authError" class="text-sm text-red-600 hidden"></p>
+						<button class="w-full h-10 btn-primary font-semibold" type="submit">Continue</button>
+					</form>
+					<p class="text-sm text-center mt-3">No account? <button id="switchToSignup" class="text-amber-600 hover:underline">Create one</button></p>
+					<p class="text-sm text-center mt-1 hidden" id="switchToSigninWrap">Have an account? <button id="switchToSignin" class="text-amber-600 hover:underline">Sign in</button></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="app.js"></script>
+</body>
+</html>
